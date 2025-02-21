@@ -26,11 +26,11 @@ x-casaos:
     en_us: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
   tagline:
     en_us: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
-  developer: ESPHome
-  author: WisdomSky
+  developer: ARM32
+  author: ARM32
   icon: https://avatars.githubusercontent.com/u/45919759
   thumbnail: https://avatars.githubusercontent.com/u/45919759
-  category: Coolstore
+  category: ARM32
   tips:
     before_install:
       en_us: |

@@ -91,8 +91,8 @@ x-casaos:
     - armhf
   main: immich
   store_app_id: immich
-  category: We2app.com
-  author: We2app.com
+  category: ARM32
+  author: ARM32
   developer: Atik
   icon: https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/immich/icon.png
   screenshot_link:
