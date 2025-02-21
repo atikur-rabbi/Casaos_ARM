@@ -85,7 +85,10 @@ networks:
     name: immich
 
 x-casaos:
-
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   main: immich
   store_app_id: immich
   category: We2app.com
