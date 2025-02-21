@@ -74,10 +74,10 @@ x-casaos:
   tagline:
     en_us: cAdvisor # Short description or tagline in English
   developer: "" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
+  author: ARM32 # Author of this configuration
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cadvisor.png # Icon for the application
   thumbnail: "" # Thumbnail image
   title:
     en_us: cAdvisor # Title in English
-  category: BigBearCasaOS # Application category
+  category: ARM32 # Application category
   port_map: "8085" # Port mapping information

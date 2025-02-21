@@ -101,7 +101,7 @@ x-casaos:
   # Developer's name or identifier for the application
   developer: "Automattic"
   # Author of this configuration
-  author: BigBearTechWorld
+  author: ARM32
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wordpress.png
   # Thumbnail image URL for the application (currently empty)
@@ -110,6 +110,6 @@ x-casaos:
   title:
     en_us: WordPress
   # Application category
-  category: BigBearCasaOS
+  category: ARM32
   # Port mapping information for the application
   port_map: "8080"

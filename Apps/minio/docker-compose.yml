@@ -45,11 +45,11 @@ x-casaos:
   tagline:
     en_us: An open-source S3 alternative # Short description or tagline in English
   developer: "minio" # Developer's name or identifier
-  author: BigBearCommunity # Author of this configuration
+  author: ARM32 # Author of this configuration
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/minio.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: Minio # Title in English
-  category: BigBearCasaOS # Application category
+  category: ARM32 # Application category
   port_map: "9011" # Port mapping information
   scheme: http # URL scheme for the application
