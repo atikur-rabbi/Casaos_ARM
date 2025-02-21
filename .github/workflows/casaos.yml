@@ -1,0 +1,42 @@
+name: Create Release on Main Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get Latest Commit Message
+        id: commit_message
+        run: |
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)  # Get the latest commit message
+          echo "::set-output name=message::$COMMIT_MESSAGE"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.commit_message.outputs.message }} # Use commit SHA as tag (recommended) ${{ github.sha }}
+          release_name: Release ${{ steps.commit_message.outputs.message }} # Include commit message in release name
+          body: |
+            Automated release based on commit ${{ github.sha }}
+
+            Commit Message:
+            ${{ steps.commit_message.outputs.message }}  # Include full commit message in the body
+
+            Changes in this release:
+            -  *(Add other changelog information here if needed)*
+
+          draft: false
+          prerelease: false
