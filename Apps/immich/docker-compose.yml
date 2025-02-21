@@ -15,7 +15,7 @@ services:
         reservations:
           memory: 2048M
     container_name: immich
-    image: altran1502/immich-server:release
+    image: martabal/immich-dev:v1.40
     volumes:
       - /DATA/Gallery/immich:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
@@ -34,24 +34,6 @@ services:
     networks:
       - immich
 
-  immich-machine-learning:
-    container_name: immich-machine-learning
-    image: altran1502/immich-machine-learning:release
-    environment:
-      DB_DATABASE_NAME: immich
-      DB_PASSWORD: postgres
-      DB_USERNAME: postgres
-      # 使用代理下载图像识别模型
-      # HTTP_PROXY: http://172.17.0.1:10809
-      # HTTPS_PROXY: http://172.17.0.1:10809
-    restart: unless-stopped
-    volumes:
-      - /DATA/AppData/immich/model-cache:/cache
-    healthcheck:
-      disable: false
-    networks:
-      - immich
-
   redis:
     container_name: immich-redis
     image: redis:6.2-alpine@sha256:eaba718fecd1196d88533de7ba49bf903ad33664a92debb24660a922ecd9cac8
@@ -65,7 +47,7 @@ services:
 
   database:
     container_name: immich-postgres
-    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0
+    image: fengkx/postgres:13-alpine
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
@@ -103,9 +85,7 @@ networks:
     name: immich
 
 x-casaos:
-  architectures:
-    - amd64
-    - arm64
+
   main: immich
   store_app_id: immich
   category: We2app.com
