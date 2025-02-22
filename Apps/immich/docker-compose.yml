@@ -13,7 +13,7 @@ services:
     deploy:
       resources:
         reservations:
-          memory: 2048M
+          memory: 512M
     container_name: immich
     image: martabal/immich-dev:v1.40
     volumes:
@@ -27,7 +27,7 @@ services:
       - '2283:2283'
     depends_on:
       - redis
-      - database
+      - databaseß
     restart: unless-stopped
     healthcheck:
       disable: false
