@@ -1,0 +1,89 @@
+name: some-ghost
+services:
+    some-ghost:
+        command:
+            - node
+            - current/index.js
+        environment:
+            GHOST_CLI_VERSION: 1.27.0
+            GHOST_CONTENT: /var/lib/ghost/content
+            GHOST_INSTALL: /var/lib/ghost
+            GHOST_VERSION: 5.110.4
+            GOSU_VERSION: "1.17"
+            NODE_ENV: development
+            NODE_VERSION: 18.20.7
+            PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+            YARN_VERSION: 1.22.22
+            database__connection__filename: /var/lib/ghost/content/data/ghost.db
+        image: ghost:alpine
+        network_mode: bridge
+        ports:
+            - target: 2368
+              published: "3001"
+              protocol: tcp
+        restart: "no"
+        volumes:
+            - type: bind
+              source: /path/to/ghost/blog
+              target: /var/lib/ghost/content
+        x-casaos:
+            envs:
+                - container: NODE_ENV
+                  description:
+                    en_us: ""
+                - container: database__connection__filename
+                  description:
+                    en_us: ""
+                - container: PATH
+                  description:
+                    en_us: ""
+                - container: NODE_VERSION
+                  description:
+                    en_us: ""
+                - container: YARN_VERSION
+                  description:
+                    en_us: ""
+                - container: GOSU_VERSION
+                  description:
+                    en_us: ""
+                - container: GHOST_CLI_VERSION
+                  description:
+                    en_us: ""
+                - container: GHOST_INSTALL
+                  description:
+                    en_us: ""
+                - container: GHOST_CONTENT
+                  description:
+                    en_us: ""
+                - container: GHOST_VERSION
+                  description:
+                    en_us: ""
+            image: ""
+            ports:
+                - container: "2368"
+                  description:
+                    en_us: ""
+            volumes:
+                - container: /var/lib/ghost/content
+                  description:
+                    en_us: ""
+x-casaos:
+    architectures:
+        - arm
+    author: ARM32
+    category: ARM32
+    description:
+        en_us: ""
+    developer: ARM32
+    icon: https://camo.githubusercontent.com/335561ab083b75a8f388f44b3032e4dd0cefde0f85bad9343e2eab1f23112513/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f313933383832342f323338313537372f37316162336264302d613863362d313165332d383937622d3261306666646436346132662e6a7067
+    image: null
+    main: some-ghost
+    port_map: "3001"
+    scheme: http
+    tagline:
+        en_us: This is a compose app converted from a legacy app (CasaOS v0.4.3 or earlier)
+    thumbnail: ""
+    tips:
+        custom: This is a compose app converted from a legacy app (CasaOS v0.4.3 or earlier)
+    title:
+        en_us: some-ghost
