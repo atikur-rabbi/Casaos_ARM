@@ -1,0 +1,32 @@
+name: Samba
+author: YourName
+category: Utilities
+description: Lightweight Samba server for file sharing.
+tagline: Easy file sharing with Samba.
+developer: dockurr
+website: https://github.com/dockurr/samba
+type: docker
+platform: linux
+image: dockurr/samba
+port_map:
+  - container: "445"
+    host: "445"
+    protocol: tcp
+    description: "Samba port"
+envs:
+  - name: NAME
+    value: Data
+    description: Share name
+  - name: USER
+    value: samba
+    description: Username
+  - name: PASS
+    value: secret
+    description: Password
+volumes:
+  - container: /storage
+    host: /DATA/AppData/samba
+    description: Samba shared folder
+restart_policy: always
+network_mode: bridge
+container_name: samba
